@@ -66,7 +66,7 @@ def derive_fields(language_app) -> (list[str], list[str]):
         return language_app.input_variables, language_app.output_variables
     elif hasattr(language_app, "prompt"):
         return language_app.prompt.input_variables, [language_app.output_key]
-    return [language_app.input_key], ["output"]
+    return [language_app.input_keys[0]], ["output"]
 
 
 def derive_class(name, fields, add_memory=False):
